@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Appointment {
@@ -18,8 +19,12 @@ public class Appointment {
     private boolean ended;
     private String reason;
 
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
     public Long getId() {
@@ -85,4 +90,3 @@ public class Appointment {
     }
 
 }
-

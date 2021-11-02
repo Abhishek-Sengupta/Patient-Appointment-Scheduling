@@ -1,7 +1,10 @@
 package com.springdata.patientscheduling.entities;
 
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class Insurance {
+
     private String providerName;
     private double copay;
 
@@ -25,4 +28,5 @@ public class Insurance {
     public String toString() {
         return "Insurance [providerName=" + providerName + ", copay=" + copay + "]";
     }
+
 }
